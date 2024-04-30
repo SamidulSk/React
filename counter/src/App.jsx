@@ -20,7 +20,10 @@ function App() {
   const decreaseValue = () => {
     if (counter > 0) {
       counter--;
-      setCounter(counter)
+      //batch me set karta hai
+      setCounter( (prevCounter)=>prevCounter-1)
+      setCounter( (prevCounter)=>prevCounter-1)
+      setCounter( (prevCounter)=>prevCounter-1)
     }
   }
   return (
