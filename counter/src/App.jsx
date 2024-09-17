@@ -1,18 +1,17 @@
 import { useState } from 'react' //hook
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 
 function App() {
 
-  let [counter, setCounter] = useState(15) // react change the value of counter variable in whole page while updatation
+  let [counter, setCounter] = useState(25) // react change the value of counter variable in whole page while updatation
 
   //let counter = 5;
 
   const addValue = () => {
     // counter += 1;
     // console.log('cliked', Math.random(), counter)
-    if (counter < 20) {
+    if (counter < 40) {
       counter++;
       setCounter(counter);
     }
@@ -21,9 +20,11 @@ function App() {
     if (counter > 0) {
       counter--;
       //batch me set karta hai
+      //but we can handle this scenario by this below approach
       setCounter( (prevCounter)=>prevCounter-1)
       setCounter( (prevCounter)=>prevCounter-1)
       setCounter( (prevCounter)=>prevCounter-1)
+     
     }
   }
   return (
