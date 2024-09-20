@@ -3,11 +3,11 @@ import { useState, useCallback, useEffect, useRef } from 'react'
 
 
 function App() {
-  //1 which are change
+  //1 which are change in UI
   const [length, setLength] = useState(8);
   const [numberAllowed, setNumberAllowed] = useState(false);
-  const [characterAllowed, serCharactersAllowed] = useState(false);
-  const [password, setPassword] = useState("")
+  const [characterAllowed, setCharactersAllowed] = useState(false);
+  const [password, setPassword] = useState("") // we can set first pasword here but we go for different mechanishm that generate password on page load-> UseEffect
 
   // ref hook
   const passwordRef = useRef(null)
@@ -20,7 +20,7 @@ function App() {
   }, [password])
 
   // 2 password generator har condition me bar bar call hoga -> useCallback ->re-render-> memorize the function
-  // if their is any change is dependecies call function again
+  // if their is any change is dependecies call function again with optimization
   const passwordGenerator = useCallback(() => {
     let pass = ""
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -34,7 +34,7 @@ function App() {
     }
     setPassword(pass)
   }, [length, numberAllowed, characterAllowed, setPassword])
-// when page load or change in dependency array -> re-render useEffect 
+  // when page load or change in dependency array -> re-render useEffect 
   useEffect(() => { passwordGenerator() }, [length, numberAllowed, characterAllowed, passwordGenerator])
   return (
     <>
@@ -58,7 +58,7 @@ function App() {
             <input
               type="range"
               min={6}
-              max={100}
+              max={50}
               value={length}
               className='cursor-pointer'
               onChange={(e) => { setLength(e.target.value) }}
@@ -85,7 +85,7 @@ function App() {
               id='charecterInput'
 
               onChange={() => {
-                setNumberAllowed((prev) => !prev);
+                setCharactersAllowed((prev) => !prev);
               }}
             />
             <label htmlFor="charecterInput">Charecters</label>

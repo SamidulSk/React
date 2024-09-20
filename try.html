@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello world</h1>
+</body>
+<script>
+    const arr = ["sk", "suso", "grm", "prit"];
+    let text = document.querySelector('h1');
+    let index = 0;
+
+    text.addEventListener('click', () => {
+        text.innerHTML = arr[index];
+        index = (index + 1) % arr.length; // Loop back to the start
+    });
+</script>
+</html>
