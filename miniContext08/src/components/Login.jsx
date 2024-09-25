@@ -9,6 +9,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    // setting data(username, password) to global object-> UserContext
     setUser({ username, password })
   }
   return (

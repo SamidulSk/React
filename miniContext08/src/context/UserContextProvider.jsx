@@ -4,7 +4,8 @@ import UserContext from './UserContext'
 const UserContextProvider = ({ children }) => {
     const [user, setUser] = React.useState(null)
     return (
-        <UserContext.Provider value={{ user, setUser }}>
+        // value means what data is in your context provider , some component can save data to it and some can read data from it
+        <UserContext.Provider value={{ user, setUser }}> 
             {children}
         </UserContext.Provider >
     )
