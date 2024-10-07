@@ -1,6 +1,7 @@
 import { createContext, useContext } from "react";
 
 export const TodoContext = createContext({
+    // default value of all todos
     todos:[
         {
             id:1,

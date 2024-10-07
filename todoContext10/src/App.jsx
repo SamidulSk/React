@@ -29,7 +29,7 @@ function App() {
           completed: !prevTodo.completed
         } : prevTodo))
   }
-
+// local storage
   useEffect(() => {
     const todos = JSON.parse(localStorage.getItem("todos"))
 
