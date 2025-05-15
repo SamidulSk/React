@@ -1,7 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 
-
-
 function App() {
   //1 which are change in UI
   const [length, setLength] = useState(8);
